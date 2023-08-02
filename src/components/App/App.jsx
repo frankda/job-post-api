@@ -8,6 +8,8 @@ const light = {
     primary: 'rgb(44, 177, 188)',
     secondary: '#87eaf2',
     gray: 'rgb(72, 101, 129)',
+    white: '#fff',
+    lightGray: 'rgba(0, 0, 0, 0.1)',
   },
   borderRadius: '2px',
 };

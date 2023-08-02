@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import Logo from 'components/Logo/Logo';
 import Card from 'components/Card/Card';
 import FormInputRow from 'components/FormInputRow/FormInputRow';
@@ -16,14 +17,19 @@ function RegisterPage() {
     email: '',
     password: '',
   });
+  const router = useRouter();
 
-  const { setupUser } = useAppContext();
+  const { user, setupUser } = useAppContext();
+
+  useEffect(() => {
+    if (user) {
+      router.push('/dashboard');
+    }
+  }, [user, router]);
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
     const { name, email, password } = formValues;
-    console.log({ email });
-    console.log({ password });
 
     if (!email || !password) {
       alert('Please fill out all fields');

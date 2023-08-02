@@ -4,14 +4,14 @@ import { useAppContext } from 'context/appContext';
 import RedirectTemplate from 'components/RedirectTemplate/RedirectTemplate';
 
 function DashboardPage() {
-  const context = useAppContext();
-  console.log(context);
+  const { user } = useAppContext();
+
   // if (user === undefined) {
   //   return (<RedirectTemplate />);
   // }
 
   return (
-    <h1>Dashboard</h1>
+    <></>
   );
 }
 
